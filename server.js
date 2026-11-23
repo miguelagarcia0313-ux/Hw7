@@ -1,15 +1,13 @@
 const express = require("express");
 const path = require("path");
+const apiRouter = require("./routes/api");
 
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "index.html"));
-});
-
-app.use("/css", express.static(path.join(__dirname, "css")));
-app.use("/js", express.static(path.join(__dirname, "js")));
+app.use(express.json());
+app.use("/api", apiRouter);
+app.use(express.static(path.join(__dirname, "public")));
 
 app.listen(port, () => {
     console.log(`Dashboard available at http://localhost:${port}`);
