@@ -15,7 +15,7 @@
 <body>   
     <header class="header">
         <h1>Admin Dashboard</h1>
-        <div class="user-info">Welcome, <span id="username"><!--UTRGV Vaqueros--></span></div>
+        <div class="user-info">Welcome, <span id="username">UTRGV Vaqueros</span></div>
     </header>
 
     <div class="dashboard">
@@ -35,7 +35,8 @@
             </button>
         </aside>
         
-        <main class="content">  <!-- MAIN AREA: Dashboard with stats and sections -->      
+        <main class="content">  <!-- MAIN AREA: Dashboard with stats and sections -->
+            <p id="dashboardError" class="dashboard-error" role="alert" hidden></p>
             
             <section class="stats">
                 <div class="card" id="card-revenue">
@@ -142,7 +143,12 @@
                                     <td>09/15/2026</td>
                                 </tr> -->
                             </tbody>
-                        </table>                        
+                        </table>
+                        <div class="table-pagination">
+                            <button id="previousCustomers" type="button" disabled>Previous</button>
+                            <span id="customerPageInfo"></span>
+                            <button id="nextCustomers" type="button" disabled>Next</button>
+                        </div>
                     </section>
                 </div>
 
@@ -152,12 +158,7 @@
                         <div id="accordion">
                             <h3>Issues</h3>
                             <div>
-                                <p class="green">
-                                    <ul id="system-status-list">
-                                        <!-- <li>All systems operational</li>
-                                        <li>All settings loaded for this system</li>                                         -->
-                                    </ul>
-                                </p>
+                                <ul id="system-status-list"></ul>
                             </div>
 
                             <h3>Notifications</h3>
