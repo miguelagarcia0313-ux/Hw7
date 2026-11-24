@@ -50,6 +50,11 @@ body {
     padding: 25px;
 }
 
+.dashboard-error {
+    color: #c62828;
+    margin: 0 0 16px;
+}
+
 .stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -115,6 +120,14 @@ body {
 table {
     width: 100%;
     border-collapse: collapse;
+}
+
+.table-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 12px;
 }
 
 th,
